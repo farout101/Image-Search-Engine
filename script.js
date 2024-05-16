@@ -4,7 +4,7 @@
 const searchForm = document.getElementById("search-form");
 const searchBox = document.getElementById("search-box");
 const searchResult = document.getElementById("search-result");
-const searchMoreBtn = document.getElementById("search-more-btn");
+const searchMoreBtn = document.getElementById("show-more-btn");
 
 const accessKey = "cu3LKjL5__dbJt-cOgaINxfojsaOiWj1abQm-jbTItI";
 let keyword = "";
@@ -16,6 +16,10 @@ async function searchImages() {
 
 	const response = await fetch(url);
 	const data = await response.json();
+
+    if(page === 1) {
+        searchResult.innerHTML = "";
+    }
 
 	const results = data.results;
 
@@ -30,10 +34,17 @@ async function searchImages() {
 		imageLink.appendChild(image);
 		searchResult.appendChild(imageLink);
 	});
+
+    searchMoreBtn.style.display = "block";
 }
 
 searchForm.addEventListener("submit", (event) => {
 	event.preventDefault();
 	page = 1;
 	searchImages();
+});
+
+searchMoreBtn.addEventListener("click", () => {
+    page++;
+    searchImages();
 });

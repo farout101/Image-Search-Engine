@@ -6,11 +6,15 @@
 }
 
 body {
-    background: linear-gradient(-135deg, #16314d, #000000);
+    background: linear-gradient(-90deg, #16314d, #000000);
     color: #fff;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    min-height: 100vh; 
+    margin: 0; 
+    padding: 0; 
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 h1 {
     text-align: center;
@@ -59,7 +63,7 @@ form button {
 }
 
 #show-more-btn {
-    background: #000000;
+    background: #16314d;
     color: #fff;
     border: 0;
     outline: 0;
