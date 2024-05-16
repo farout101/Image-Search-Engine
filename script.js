@@ -17,9 +17,9 @@ async function searchImages() {
 	const response = await fetch(url);
 	const data = await response.json();
 
-    if(page === 1) {
-        searchResult.innerHTML = "";
-    }
+	if (page === 1) {
+		searchResult.innerHTML = "";
+	}
 
 	const results = data.results;
 
@@ -35,7 +35,8 @@ async function searchImages() {
 		searchResult.appendChild(imageLink);
 	});
 
-    searchMoreBtn.style.display = "block";
+	searchMoreBtn.style.display = "block";
+	document.querySelector(".copy-right").style.display = "flex";
 }
 
 searchForm.addEventListener("submit", (event) => {
@@ -45,6 +46,6 @@ searchForm.addEventListener("submit", (event) => {
 });
 
 searchMoreBtn.addEventListener("click", () => {
-    page++;
-    searchImages();
+	page++;
+	searchImages();
 });

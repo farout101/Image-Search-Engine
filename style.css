@@ -55,6 +55,11 @@ form button {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+    transform: translateX(10px);
 }
 
 ::placeholder {
@@ -72,6 +77,11 @@ form button {
     margin: 10px auto 100px;
     cursor: pointer;
     display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#show-more-btn:hover {
+    transform: translateY(5px);
 }
 
 #search-result {
@@ -87,4 +97,27 @@ form button {
     height: 230px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.copy-right {
+    display: flex;
+    font-size: 15px;
+    font-weight: 100;
+    justify-content: center;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.copy-right a {
+    background-color: black;
+    border-radius: 5px;
+    padding: 0px 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.copy-right a:hover {
+    background-color: #fff;
+    color: #000000;
 }
